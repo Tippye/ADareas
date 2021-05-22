@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.adareas.mapper.AreaMapper">
+    <resultMap id="BaseResultMap" type="com.adareas.entity.Area">
+        <result column="ID" jdbcType="VARCHAR" property="ID"/>
+        <result column="ParentId" jdbcType="VARCHAR" property="ParentId"/>
+        <result column="LevelType" jdbcType="VARCHAR" property="LevelType"/>
+        <result column="Name" jdbcType="VARCHAR" property="Name"/>
+        <result column="ShortName" jdbcType="VARCHAR" property="ShortName"/>
+        <result column="ParentPath" jdbcType="VARCHAR" property="ParentPath"/>
+        <result column="Province" jdbcType="VARCHAR" property="Province"/>
+        <result column="City" jdbcType="VARCHAR" property="City"/>
+        <result column="District" jdbcType="VARCHAR" property="District"/>
+        <result column="ProvinceShortName" jdbcType="VARCHAR" property="ProvinceShortName"/>
+        <result column="CityShortName" jdbcType="VARCHAR" property="CityShortName"/>
+        <result column="DistrictShortName" jdbcType="VARCHAR" property="DistrictShortName"/>
+        <result column="ProvincePinyin" jdbcType="VARCHAR" property="ProvincePinyin"/>
+        <result column="CityPinyin" jdbcType="VARCHAR" property="CityPinyin"/>
+        <result column="DistrictPinyin" jdbcType="VARCHAR" property="DistrictPinyin"/>
+        <result column="CityCode" jdbcType="VARCHAR" property="CityCode"/>
+        <result column="ZipCode" jdbcType="VARCHAR" property="ZipCode"/>
+        <result column="Pinyin" jdbcType="VARCHAR" property="Pinyin"/>
+        <result column="Jianpin" jdbcType="VARCHAR" property="Jianpin"/>
+        <result column="FirstChar" jdbcType="VARCHAR" property="FirstChar"/>
+        <result column="lng" jdbcType="VARCHAR" property="lng"/>
+        <result column="Lat" jdbcType="VARCHAR" property="Lat"/>
+        <result column="Remark1" jdbcType="VARCHAR" property="Remark1"/>
+        <result column="Remark2" jdbcType="VARCHAR" property="Remark2"/>
+    </resultMap>
+
+    <select id="Sel" resultType="area">
+        SELECT *
+        FROM areas
+        WHERE ID = #{ID}
+    </select>
+
+    <select id="SelChild" resultType="area">
+        SELECT *
+        FROM areas
+        WHERE ParentId = #{ID}
+    </select>
+
+    <select id="SelCitys" resultType="area">
+        SELECT *
+        FROM areas
+        WHERE LevelType = #{level} LIMIT #{start}
+            , #{end}
+    </select>
+
+    <select id="SelCitysbyPath" resultType="area">
+        SELECT *
+        FROM areas
+        WHERE LevelType = #{level}
+          AND ParentPath LIKE "%${path}%" LIMIT #{start}
+            , #{end}
+    </select>
+
+
+    <insert id="Add">
+        INSERT INTO areas
+        VALUES (#{ID}, #{ParentId}, #{LevelType}, #{FullName}, #{ShortName}, #{ParentPath},
+                #{Province}, #{City}, #{District}, #{ProvinceShortName}, #{CityShortName},
+                #{DistrictShortName}, #{ProvincePinyin}, #{CityPinyin}, #{DistrictPinyin}, #{CityCode}, #{ZipCode},
+                #{Pinyin},
+                #{Jianpin}, #{FirstChar}, #{lng}, #{Lat}, #{Remark1}, #{Remark2})
+    </insert>
+
+    <delete id="Del">
+        DELETE
+        FROM areas
+        WHERE ID = #{ID}
+    </delete>
+
+    <update id="Update" parameterType="area">
+        UPDATE areas
+        SET ParentId=#{ParentId},
+            LevelType = #{LevelType},
+            ShortName = #{ShortName},
+            ParentPath = #{ParentPath},
+            Province = #{Province},
+            City = #{City},
+            District = #{District},
+            ProvinceShortName = #{ProvinceShortName},
+            CityShortName = #{CityShortName},
+            DistrictShortName = #{DistrictShortName},
+            ProvincePinyin = #{ProvincePinyin},
+            CityPinyin = #{CityPinyin},
+            DistrictPinyin = #{DistrictPinyin},
+            CityCode = #{CityCode},
+            ZipCode = #{ZipCode},
+            Pinyin = #{Pinyin},
+            Jianpin = #{Jianpin},
+            FirstChar = #{FirstChar},
+            lng = #{lng},
+            Lat = #{Lat},
+            Remark1 = #{Remark1},
+            Remark2 = #{Remark2}
+        WHERE ID = #{ID}
+          and FullName = #{FullName}
+    </update>
+</mapper>
