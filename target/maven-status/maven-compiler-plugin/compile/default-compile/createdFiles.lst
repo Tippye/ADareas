@@ -1,0 +1,13 @@
+com\adareas\utils\AreasUtils.class
+com\adareas\entity\Area.class
+com\adareas\controller\AreaController.class
+com\adareas\rest\ApplicationValues.class
+com\adareas\AdareasApplication.class
+com\adareas\mapper\AreaMapper.class
+com\adareas\service\AreaService.class
+com\adareas\service\AreaServiceImpl.class
+com\adareas\utils\PinYinUtil.class
+com\adareas\api\Request.class
+com\adareas\rest\RestTemplateConfig.class
+com\adareas\entity\AmapArea.class
+com\adareas\entity\LbsArea.class
