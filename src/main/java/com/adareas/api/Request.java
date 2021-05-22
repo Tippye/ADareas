@@ -12,6 +12,11 @@ import java.util.Map;
 
 @Component
 public class Request {
+    private String AmapKey = "填写你的高德地图开发者key";
+    private String TencentKey = "填写你的腾讯地图开发者key";
+    // https://www.nowapi.com/api/life.postcode
+    private String ZipcodeKey = "NOWapi的appkey";
+    private String ZipcodeSign = "NOWapi的sign";
     private RestTemplate restTemplate = new RestTemplate();
 
     /**
@@ -62,7 +67,7 @@ public class Request {
      */
     public String districtAmap() {
         Map<String, String> uriMap = new HashMap<>(6);
-        uriMap.put("key", "8a7461cacda2a707c6cb16e176a4085a");
+        uriMap.put("key", AmapKey);
         uriMap.put("subdistrict", "4");
         ResponseEntity responseEntity = restTemplate.getForEntity(
                 generateRequestParameters("https", "restapi.amap.com/v3/config/district", uriMap),
@@ -78,7 +83,7 @@ public class Request {
      */
     public String districtLbs() {
         Map<String, String> uriMap = new HashMap<>(6);
-        uriMap.put("key", "YYTBZ-H2735-4ADI3-QANH7-ZU33T-ESFHT");
+        uriMap.put("key", TencentKey);
         ResponseEntity responseEntity = restTemplate.getForEntity(
                 generateRequestParameters("https", "apis.map.qq.com/ws/district/v1/list", uriMap),
                 String.class
@@ -94,8 +99,8 @@ public class Request {
     public String postZip(String areaName) {
         Map<String, String> uriMap = new HashMap<>(6);
         uriMap.put("areaname", areaName);
-        uriMap.put("appKey", "59134");
-        uriMap.put("sign", "a724e53b1b94bf241df9f778c747ef9a");
+        uriMap.put("appKey", ZipcodeKey);
+        uriMap.put("sign", ZipcodeSign);
         ResponseEntity responseEntity = restTemplate.getForEntity(
                 generateRequestParameters("http", "http://api.k780.com", uriMap),
                 String.class
