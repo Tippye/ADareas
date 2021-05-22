@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_2021_5_23_0_21_[更新README]" date="1621700501334" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021_5_23_0_21_[更新README]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 2021/5/23 0:21 [更新README]" />
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value=".idea/dataSources/664d84c2-9383-458c-a0a5-de4093619c51/storage_v2/_src_/schema/mysql.osA4Bg.meta" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021_5_23_0_21_[更新README]/mysql.osA4Bg.meta" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value=".idea/dataSources/664d84c2-9383-458c-a0a5-de4093619c51/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021_5_23_0_21_[更新README]/performance_schema.kIw0nw.meta" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value=".idea/dataSources/664d84c2-9383-458c-a0a5-de4093619c51/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2021_5_23_0_21_[更新README]/information_schema.FNRwLQ.meta" />
+  </binary>
+</changelist>
